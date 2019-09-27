@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.human.finalpjt.dao.InterDao">
+	<select id="viewDao"
+		resultType="com.human.finalpjt.dto.InterDto">
+		select a.s_id as s_id, a.s_name as s_name, b.c_name as
+		c_name, a.s_major as s_major
+		from student a, course b
+		where c_id
+		in(select c.c_id
+		from teach c, professor d
+		where c.p_id = d.p_id and
+		c.p_id = #{param1, jdbcType=VARCHAR})
+	</select>
+  
+	<select id="searchDao"
+		resultType="com.human.finalpjt.dto.searchdto">
+		select c.c_name as c_name, a.c_id as c_id, a.t_day<![CDATA[ || ]]>'
+		'<![CDATA[ || ]]>a.t_time
+		as con_sum, a.t_room as t_room from
+		teach a, professor b, course c
+		where a.p_id = b.p_id and a.c_id =
+		c.c_id and a.p_id =#{param1, jdbcType=VARCHAR}
+	</select>
+
+	<insert id="InsertDao">
+		insert into st_grade(st_id,st_name,st_c_name,st_major) values(#{param1},#{param2},#{param3},#{param4})
+	</insert>
+	
+	<select id="schlist" resultType = "com.human.finalpjt.dto.scheduleDto">
+      select * from schedule where sch_fromdate is not null or sch_todate is not null or sch_content is not null
+   </select>
+   <insert id="schInsert">
+      insert into schedule(sch_no, sch_fromdate, sch_todate, sch_content) values(sch_seq.nextval-1, #{param1}, #{param2}, #{param3})
+   </insert>
+   
+   <!-- 학사일정 목록 갯수(list.jsp) -->
+   <select id="count" resultType="int">
+      select count(*) as count from schedule
+   </select> 
+</mapper>
+

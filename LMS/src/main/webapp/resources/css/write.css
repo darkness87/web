@@ -1,0 +1,44 @@
+@import url("main_menu.css");
+@import url("button.css");
+table.type05 {
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: left;
+    line-height: 2.5;
+    border-top: 1px solid #DFDEF8;
+    margin: 20px -131px;
+}
+table.type05 th {
+    width: 150px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #DFDEF8;
+    background: #DFDEF8;
+}
+table.type05 td {
+    width: 350px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #DFDEF8;
+}
+header{
+    width: 1707px;
+    height: 80px;
+}
+.writetxt{
+    height: 30px;
+}
+input[type="text"]{
+    border:none;
+    background: transparent;
+    border-bottom: 1px solid silver;
+    outline: none;
+}
+textarea{
+    outline: none;
+    border: 1px solid #DFDEF8;
+    background: transparent;
+    font-size: 15px;
+}
+/***************************************************/

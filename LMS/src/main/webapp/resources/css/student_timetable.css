@@ -1,0 +1,46 @@
+@charset "EUC-KR";
+
+h1{
+	width:500px;
+	margin: 0 auto;
+	font-size: 48px;
+}
+#searchArea{
+	width: 700px;
+	margin:30px auto;
+}
+
+
+
+#showTable{ 		/* largest border */
+    width: 920px;
+    margin: 20px auto;
+}
+#showTable li{     /* all td */
+    display: inline-block;
+}
+#thead{			/* header tr */
+	height: 30px;
+}
+#thead li{   	/* th */
+    height: 30px;
+    line-height: 30px;
+    text-align:center;
+}
+.time{
+	vertical-align: top;
+    width: 100px;
+    border: 1px solid black;
+    text-align:center;
+}
+.mon,.tue,.wed,.thu,.fri{
+	vertical-align: top;
+    width: 150px;
+    border: 1px solid black;
+}
+.tbody{
+	height: 120px;
+}
+.tbody li{
+    height: 120px;
+}
